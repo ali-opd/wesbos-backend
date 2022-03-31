@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { text } from '@keystone-next/fields';
+import { relationship, text } from '@keystone-next/fields';
 import { cloudinaryImage } from '@keystone-next/cloudinary';
 import { list } from '@keystone-next/keystone/schema';
 
@@ -7,15 +7,21 @@ export const cloudinary = {
   cloudName: process.env.CLOUDINARY_CLOUD_NAME,
   apiKey: process.env.CLOUDINARY_KEY,
   apiSecret: process.env.CLOUDINARY_SECRET,
-  folder: 'sickFits',
+  folder: 'sickFits'
 };
 
 export const ProductImage = list({
   fields: {
     image: cloudinaryImage({
       cloudinary,
-      label: 'Source',
+      label: 'Source'
     }),
     altText: text(),
+    product: relationship({ ref: 'Product.photo' })
   },
+  ui: {
+    listView: {
+      initialColumns: ['images', 'altText', 'product']
+    }
+  }
 });
