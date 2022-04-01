@@ -1,10 +1,9 @@
-/* eslint-disable prettier/prettier */
 import 'dotenv/config';
 import { config, createSchema } from '@keystone-next/keystone/schema';
 import { createAuth } from '@keystone-next/auth';
 import {
   withItemData,
-  statelessSessions
+  statelessSessions,
 } from '@keystone-next/keystone/session';
 import { Product } from './schemas/Product';
 import { User } from './schemas/User';
@@ -16,7 +15,7 @@ const databaseUrl =
 
 const sessionConfig = {
   maxAge: 60 * 60 * 24 * 360,
-  secret: process.env.COOKIE_SECRET
+  secret: process.env.COOKIE_SECRET,
 };
 
 const { withAuth } = createAuth({
@@ -24,18 +23,18 @@ const { withAuth } = createAuth({
   identityField: 'email',
   secretField: 'password',
   initFirstItem: {
-    fields: ['name', 'email', 'password']
+    fields: ['name', 'email', 'password'],
     // TODO: Add initial roles here
-  }
+  },
 });
 
 export default withAuth(
   config({
-    // @ts-ignore
-    server: {},
-    cors: {
-      origin: [process.env.FRONTEND_URL],
-      credentials: true
+    server: {
+      cors: {
+        origin: [process.env.FRONTEND_URL],
+        credentials: true,
+      },
     },
     db: {
       adapter: 'mongoose',
@@ -45,23 +44,23 @@ export default withAuth(
           await insertSeedData(keystone);
           console.log('Connected to the database');
         }
-      }
+      },
       // TODO: Add data seeding here
     },
     lists: createSchema({
       // Schema items go in here
       User,
       Product,
-      ProductImage
+      ProductImage,
     }),
     ui: {
       // Show the UI only for people who pass this test,
       isAccessAllowed: ({ session }) =>
         // console.log(session);
-        !!session?.data
+        !!session?.data,
     },
     session: withItemData(statelessSessions(sessionConfig), {
-      User: 'id'
-    })
+      User: 'id',
+    }),
   })
 );

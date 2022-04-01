@@ -188,24 +188,24 @@ export type ProductWhereInput = {
   readonly name_not_ends_with_i?: Scalars['String'] | null;
   readonly name_in?: ReadonlyArray<Scalars['String'] | null> | null;
   readonly name_not_in?: ReadonlyArray<Scalars['String'] | null> | null;
-  readonly descripton?: Scalars['String'] | null;
-  readonly descripton_not?: Scalars['String'] | null;
-  readonly descripton_contains?: Scalars['String'] | null;
-  readonly descripton_not_contains?: Scalars['String'] | null;
-  readonly descripton_starts_with?: Scalars['String'] | null;
-  readonly descripton_not_starts_with?: Scalars['String'] | null;
-  readonly descripton_ends_with?: Scalars['String'] | null;
-  readonly descripton_not_ends_with?: Scalars['String'] | null;
-  readonly descripton_i?: Scalars['String'] | null;
-  readonly descripton_not_i?: Scalars['String'] | null;
-  readonly descripton_contains_i?: Scalars['String'] | null;
-  readonly descripton_not_contains_i?: Scalars['String'] | null;
-  readonly descripton_starts_with_i?: Scalars['String'] | null;
-  readonly descripton_not_starts_with_i?: Scalars['String'] | null;
-  readonly descripton_ends_with_i?: Scalars['String'] | null;
-  readonly descripton_not_ends_with_i?: Scalars['String'] | null;
-  readonly descripton_in?: ReadonlyArray<Scalars['String'] | null> | null;
-  readonly descripton_not_in?: ReadonlyArray<Scalars['String'] | null> | null;
+  readonly description?: Scalars['String'] | null;
+  readonly description_not?: Scalars['String'] | null;
+  readonly description_contains?: Scalars['String'] | null;
+  readonly description_not_contains?: Scalars['String'] | null;
+  readonly description_starts_with?: Scalars['String'] | null;
+  readonly description_not_starts_with?: Scalars['String'] | null;
+  readonly description_ends_with?: Scalars['String'] | null;
+  readonly description_not_ends_with?: Scalars['String'] | null;
+  readonly description_i?: Scalars['String'] | null;
+  readonly description_not_i?: Scalars['String'] | null;
+  readonly description_contains_i?: Scalars['String'] | null;
+  readonly description_not_contains_i?: Scalars['String'] | null;
+  readonly description_starts_with_i?: Scalars['String'] | null;
+  readonly description_not_starts_with_i?: Scalars['String'] | null;
+  readonly description_ends_with_i?: Scalars['String'] | null;
+  readonly description_not_ends_with_i?: Scalars['String'] | null;
+  readonly description_in?: ReadonlyArray<Scalars['String'] | null> | null;
+  readonly description_not_in?: ReadonlyArray<Scalars['String'] | null> | null;
   readonly photo?: ProductImageWhereInput | null;
   readonly photo_is_null?: Scalars['Boolean'] | null;
   readonly status?: Scalars['String'] | null;
@@ -245,8 +245,8 @@ export type SortProductsBy =
   | 'id_DESC'
   | 'name_ASC'
   | 'name_DESC'
-  | 'descripton_ASC'
-  | 'descripton_DESC'
+  | 'description_ASC'
+  | 'description_DESC'
   | 'photo_ASC'
   | 'photo_DESC'
   | 'status_ASC'
@@ -256,7 +256,7 @@ export type SortProductsBy =
 
 export type ProductUpdateInput = {
   readonly name?: Scalars['String'] | null;
-  readonly descripton?: Scalars['String'] | null;
+  readonly description?: Scalars['String'] | null;
   readonly photo?: ProductImageRelateToOneInput | null;
   readonly status?: Scalars['String'] | null;
   readonly price?: Scalars['Int'] | null;
@@ -269,7 +269,7 @@ export type ProductsUpdateInput = {
 
 export type ProductCreateInput = {
   readonly name?: Scalars['String'] | null;
-  readonly descripton?: Scalars['String'] | null;
+  readonly description?: Scalars['String'] | null;
   readonly photo?: ProductImageRelateToOneInput | null;
   readonly status?: Scalars['String'] | null;
   readonly price?: Scalars['Int'] | null;
@@ -469,11 +469,11 @@ export type UserListFn = (
 
 export type ProductListTypeInfo = {
   key: 'Product';
-  fields: 'id' | 'name' | 'descripton' | 'photo' | 'status' | 'price';
+  fields: 'id' | 'name' | 'description' | 'photo' | 'status' | 'price';
   backing: {
     readonly id: string;
     readonly name?: string | null;
-    readonly descripton?: string | null;
+    readonly description?: string | null;
     readonly photo?: string | null;
     readonly status?: string | null;
     readonly price?: number | null;

@@ -157,7 +157,7 @@ input ProductImageRelateToOneInput {
 type Product {
   id: ID!
   name: String
-  descripton: String
+  description: String
   photo: ProductImage
   status: String
   price: Int
@@ -188,24 +188,24 @@ input ProductWhereInput {
   name_not_ends_with_i: String
   name_in: [String]
   name_not_in: [String]
-  descripton: String
-  descripton_not: String
-  descripton_contains: String
-  descripton_not_contains: String
-  descripton_starts_with: String
-  descripton_not_starts_with: String
-  descripton_ends_with: String
-  descripton_not_ends_with: String
-  descripton_i: String
-  descripton_not_i: String
-  descripton_contains_i: String
-  descripton_not_contains_i: String
-  descripton_starts_with_i: String
-  descripton_not_starts_with_i: String
-  descripton_ends_with_i: String
-  descripton_not_ends_with_i: String
-  descripton_in: [String]
-  descripton_not_in: [String]
+  description: String
+  description_not: String
+  description_contains: String
+  description_not_contains: String
+  description_starts_with: String
+  description_not_starts_with: String
+  description_ends_with: String
+  description_not_ends_with: String
+  description_i: String
+  description_not_i: String
+  description_contains_i: String
+  description_not_contains_i: String
+  description_starts_with_i: String
+  description_not_starts_with_i: String
+  description_ends_with_i: String
+  description_not_ends_with_i: String
+  description_in: [String]
+  description_not_in: [String]
   photo: ProductImageWhereInput
   photo_is_null: Boolean
   status: String
@@ -245,8 +245,8 @@ enum SortProductsBy {
   id_DESC
   name_ASC
   name_DESC
-  descripton_ASC
-  descripton_DESC
+  description_ASC
+  description_DESC
   photo_ASC
   photo_DESC
   status_ASC
@@ -257,7 +257,7 @@ enum SortProductsBy {
 
 input ProductUpdateInput {
   name: String
-  descripton: String
+  description: String
   photo: ProductImageRelateToOneInput
   status: String
   price: Int
@@ -270,7 +270,7 @@ input ProductsUpdateInput {
 
 input ProductCreateInput {
   name: String
-  descripton: String
+  description: String
   photo: ProductImageRelateToOneInput
   status: String
   price: Int
